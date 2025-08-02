@@ -30,3 +30,9 @@ else:
 
 # Displaying the result
 print(f"Your BMI is: {bmi:.2f}. You are classified as: {category}.")
+print("Thank you for using the BMI Calculator!")
+
+# This code calculates the Body Mass Index (BMI) based on user input for weight and height.
+# End of code - Works in the terminal
+
+
