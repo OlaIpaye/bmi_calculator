@@ -15,5 +15,5 @@ Building a BMI Calculator program in Python.
 
 ### Tools
 * Python
-* VS Code
-* 
+* VS Code (co pilot)
+* Chat GPT (project suggestion and guide)
