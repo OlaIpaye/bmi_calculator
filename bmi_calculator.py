@@ -20,9 +20,21 @@ def get_user_input():
         Returns:
         tuple: weight in kg (float), height in cm (float)
     """
-    weight = float(input("Enter your weight in kg: "))
-    height_cm = float(input("Enter your height in cm: "))
-    return weight, height_cm
+    while True:
+        try:
+
+            weight = float(input("Enter your weight in kg: "))
+            height_cm = float(input("Enter your height in cm: "))
+
+            if weight <= 0 or height_cm <= 0:
+                print("Weight and height must be greater than 0. Please try again.\n")
+                continue
+
+            return weight, height_cm
+    
+        except ValueError:
+            print("Invalid input. Please enter numeric values only.\n")
+
 
 # Converting height from cm to meters, then calculated bmi
 def calculate_bmi(weight, height_cm):
@@ -38,6 +50,7 @@ def calculate_bmi(weight, height_cm):
     # Calculating BMI
     bmi = weight / (height_m ** 2)
     return bmi
+
 
 # Categorizing BMI using if-elif-else statements.
 def categorize_bmi(bmi):
@@ -56,6 +69,7 @@ def categorize_bmi(bmi):
         return "Overweight"
     else:
         return "Obesity"
+
 
 # Displaying the result
 def display_result(bmi, category):
