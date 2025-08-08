@@ -13,6 +13,7 @@ if weight and height_cm:
     height_m = height_cm / 100 # converts height to meters
     bmi = weight / (height_m ** 2)
 
+    # Categorize BMI according to WHO Standards
     if bmi < 18.5:
         category = "Underweight"
     elif bmi < 25:
@@ -22,8 +23,19 @@ if weight and height_cm:
     else:
         category = "Obese"
 
+    # Personalised message for next steps to take
+    if category == "Underweight":
+        action_to_take = "You are underweight. Eating more can help you reach a healthier BMI range"
+    elif category == "Normal Weight":
+        action_to_take = "You are normal weight. Keep up your current lifestyle if you have no plans to lose or gain weight."
+    elif category == "Obese":
+        action_to_take = "You are obese. Consider eating healthier and increasing your physical activity."
+    elif category == "Overweight":
+        action_to_take = "You are overweight. Losing some weight can help you reach a healthier BMI range."
+
     # Display result
     st.subheader("Your BMI Results:")
     st.write(f"**BMI:** {bmi:.2f}. You are {category}!") # round the bmi figure to 2 decimal places
+    st.write(f"**NEXT STEP:** {action_to_take}")
 
 
