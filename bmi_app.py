@@ -1,3 +1,6 @@
+import streamlit as st
+st.set_page_config(page_title="BMI Calculator", page_icon="🧮", layout="centered")
+import pandas as pd
 
 # Functions for the app core logic
 def calculate_bmi(weight, height_cm):
@@ -27,8 +30,6 @@ def get_health_message(category):
 
 # Streamlit App
 
-import streamlit as st
-
 st.title("Ola's BMI Calculator")
 
 st.write("Welcome! Use the inputs below to calculate your Body Mass Index (BMI).")
@@ -57,3 +58,34 @@ if weight and height_cm:
     elif category == "Obese":
         st.error(action_to_take)
 
+# Download report as TXT file
+bmi_report_txt = f"""
+    Your BMI Report
+
+    Your BMI: {bmi:.2f}
+    Category: {category}
+    Health Advice: {action_to_take}
+"""
+
+st.download_button(
+    label="Download Your BMI Report (TXT)",
+    data=bmi_report_txt,
+    file_name="BMI_Report.txt",
+    mime="text/plain"
+)
+
+# Download report as CSV file
+bmi_data = pd.DataFrame({
+    "Your BMI": [round(bmi, 2)],
+    "Category": [category],
+    "Health Advice": [action_to_take]
+})
+
+bmi_data_to_csv = bmi_data.to_csv(index=False)
+
+st.download_button(
+    label="Download Your BMI Report (CSV)",
+    data=bmi_data_to_csv,
+    file_name="BMI_Report.csv",
+    mime="text/csv"
+)
