@@ -16,7 +16,7 @@ A modern, user-friendly BMI Calculator built with Python and Streamlit. It calcu
 
 
 ## BMI APP
-<!-- Screenshot of app goes here.. -->
+![BMI Calculator App](<images/BMI Report App.png>)
 
 
 ### Tools
