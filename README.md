@@ -18,7 +18,7 @@ A modern, user-friendly BMI Calculator built with Python and Streamlit. It calcu
 ## BMI APP
 ![BMI Calculator App](<images/BMI Report App.png>)
 
-* **Click here to try the BMI Calculator:** https://ola-bmi-calculator.streamlit.app/
+<a href="https://ola-bmi-calculator.streamlit.app/" target="_blank">Click here to try the BMI Calculator</a>
 
 ### Tools
 * Python 3.13
